@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Land van Gaasbeek</title>
+  <meta name="description" content="Contacteer brasserie Land van Gaasbeek in Gaasbeek: telefoon, e-mail, adres, openingsuren en een contactformulier.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Volgorde is belangrijk: brand → layout → components → pagina -->
+  <link rel="stylesheet" href="assets/css/brand.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/contact.css">
+</head>
+<body class="contact-page">
+
+<div class="progress-bar" aria-hidden="true"><div class="progress-bar-fill" id="progressFill"></div></div>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand-mark">
+      <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M16 3C10 8 6 13.5 6 19a10 10 0 0 0 20 0c0-5.5-4-11-10-16Z" stroke="#33422e" stroke-width="1.6"/>
+        <path d="M16 9v18M16 14c-2.4-2-4.6-2-6.4-.6M16 19c2.8-2.2 5.4-2.2 7.6-.4" stroke="#c98a34" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      Land van Gaasbeek
+    </a>
+    <div class="nav-cta">
+      <div class="nav-links-list">
+        <a href="index.html#gerechten">Gerechten</a>
+        <a href="index.html#ervaringen">Ervaringen</a>
+        <a href="index.html#faq">Veelgestelde vragen</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </div>
+      <a href="index.html#reserveren" class="btn btn-primary nav-pulse-btn">Reserveer nu</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h1>Een vraag? Wij horen het graag.</h1>
+    <p>Bel ons voor een tafel — dat gaat het snelst. Voor al de rest mag je ons hier een bericht sturen: allergieën, een grote groep, een feest, of gewoon een vraag over de kaart.</p>
+    <nav class="breadcrumb" aria-label="Kruimelpad">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Contact</span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section section-first" id="bericht">
+    <div class="wrap">
+      <div class="contact-grid">
+
+        <div>
+          <div class="reply-note">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span><strong>We antwoorden meestal binnen de dag.</strong> <br>Heb je een tafel nodig voor vandaag of morgen? Bel dan liever even.</span>
+          </div>
+
+          <form class="form-card reveal" id="contactForm" method="post" action="mailto:info@landvangaasbeek.be" enctype="text/plain">
+            <div class="form-row">
+              <div class="field">
+                <label for="naam">Naam <span class="field-req" aria-hidden="true">*</span></label>
+                <input type="text" id="naam" name="naam" aria-describedby="naam-error" placeholder="Voor- en achternaam" autocomplete="name" required>
+                <span class="field-error" id="naam-error"></span>
+              </div>
+              <div class="field">
+                <label for="telefoon">Telefoonnummer</label>
+                <input type="tel" id="telefoon" name="telefoon" aria-describedby="telefoon-error" placeholder="04XX XX XX XX" autocomplete="tel" inputmode="tel">
+                <span class="field-error" id="telefoon-error"></span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="email">E-mail <span class="field-req" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" aria-describedby="email-error" placeholder="jouw@email.be" autocomplete="email" inputmode="email" required>
+              <span class="field-error" id="email-error"></span>
+            </div>
+
+            <div class="field">
+              <label for="bericht">Bericht <span class="field-req" aria-hidden="true">*</span></label>
+              <textarea id="bericht" name="bericht" aria-describedby="bericht-error" rows="6" placeholder="Waarmee kunnen we je helpen?" required></textarea>
+              <span class="field-error" id="bericht-error"></span>
+            </div>
+
+            <!-- Honeypot tegen spambots. Laat leeg — mensen zien dit veld niet. -->
+            <div class="field-trap" aria-hidden="true">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Verstuur bericht</button>
+            <p class="form-hint"><span class="field-req" aria-hidden="true">*</span> Verplicht. Je gegevens gebruiken we enkel om je vraag te beantwoorden.</p>
+
+            <div class="form-status" id="formStatus" aria-live="polite"></div>
+
+            <noscript>
+              <p class="form-status is-visible is-error">
+                JavaScript staat uit. Versturen opent dan rechtstreeks je mailprogramma, zonder
+                controle op tikfouten — en sommige browsers blokkeren dat. Lukt het niet, mail ons
+                dan op <a href="mailto:info@landvangaasbeek.be">info@landvangaasbeek.be</a>
+                of bel <a href="tel:+32476273406">+32 476 27 34 06</a>.
+              </p>
+            </noscript>
+          </form>
+        </div>
+
+        <div class="info-card reveal">
+          <div class="info-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-7.4 7-12.4A7 7 0 0 0 5 8.6C5 13.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="8.6" r="2.4" stroke="currentColor" stroke-width="1.5"/></svg>
+            <div>
+              <h4>Adres</h4>
+              <p>Donkerstraat 41<br>1750 Gaasbeek — 1 km van het kasteel</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 2c1 2.5 3.5 5 6 6l2-2 5 2v2c0 1-1 2-2 2C10.5 20 4 13.5 4 5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <div>
+              <h4>Telefoon</h4>
+              <p><a href="tel:+32476273406">+32 476 27 34 06</a><br><span style="opacity:.65; font-size:.85em;">liefst voor reservaties</span></p>
+            </div>
+          </div>
+          <div class="info-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18v12H3V6Z" stroke="currentColor" stroke-width="1.5"/><path d="m3 7 9 6 9-6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <div>
+              <h4>E-mail</h4>
+              <p><a href="mailto:info@landvangaasbeek.be">info@landvangaasbeek.be</a></p>
+            </div>
+          </div>
+          <div class="info-row" style="align-items:flex-start;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/></svg>
+            <div style="width:100%;">
+              <h4>Openingsuren</h4>
+              <table class="hours-table">
+                <tr><th>Zomer (6/4 – 30/9)</th><td></td></tr>
+                <tr><td>Maandag – vrijdag</td><td>12–14u &amp; 18–20u</td></tr>
+                <tr><td>Zaterdag – zondag</td><td>gesloten</td></tr>
+                <tr><th style="padding-top:.6rem;">Winter (nov – maart)</th><td></td></tr>
+                <tr><td>Dinsdag – vrijdag</td><td>12–14u &amp; 18–20u</td></tr>
+                <tr><td>Zaterdag</td><td>17u30–20u45</td></tr>
+                <tr><td>Zondag – maandag</td><td>gesloten</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <a class="route-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Donkerstraat+41%2C+1750+Gaasbeek" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-7.4 7-12.4A7 7 0 0 0 5 8.6C5 13.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="8.6" r="2.4" stroke="currentColor" stroke-width="1.5"/></svg>
+            Route naar de zaak
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span><strong>Land van Gaasbeek</strong> — Donkerstraat 41, 1750 Gaasbeek</span>
+    <span>Wendy &amp; Miguel · +32 476 27 34 06</span>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/contact-form.js" defer></script>
+</body>
+</html>

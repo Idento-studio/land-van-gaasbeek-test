@@ -1,0 +1,97 @@
+/* ==========================================================================
+   brand.css — de merkbasis van Land van Gaasbeek
+   Enige plek waar kleuren, fonts, spacing en radii gedefinieerd worden.
+   Wijzig hier en de hele site volgt. Bevat GEEN component- of paginastijlen.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* — Palette — */
+  --moss-950: #1c2419;
+  --moss-900: #242f1f;
+  --moss-800: #33422e;
+  --moss-700: #445642;
+  --gold-600: #a8721f;
+  --gold-500: #c98a34;
+  --gold-400: #dba456;
+  --wine-700: #5f2424;
+  --wine-600: #7a2e2e;
+  --linen-50:  #faf8f2;
+  --linen-100: #f3efe3;
+  --linen-200: #eae3d3;
+  --linen-300: #ded4bd;
+  --sage-400: #a9af9a;
+  --sage-300: #c2c7b3;
+  --ink-900: #1a1712;
+  --ink-800: #221f1a;
+  --ink-600: #4a453c;
+  --ink-400: #79746a;
+
+  --bg: var(--linen-100);
+  --surface: var(--linen-50);
+  --surface-raised: #ffffff;
+  --text: var(--ink-800);
+  --text-muted: var(--ink-600);
+  --border: var(--linen-300);
+  --accent: var(--gold-500);
+  --accent-ink: var(--gold-600);
+  --brand: var(--moss-800);
+
+  /* — Type scale — */
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Work Sans", "Segoe UI", system-ui, sans-serif;
+
+  --fs-eyebrow: 0.8125rem;
+  --fs-small: 0.9375rem;
+  --fs-body: 1.0625rem;
+  --fs-lead: 1.25rem;
+  --fs-h3: clamp(1.375rem, 1.1rem + 1.1vw, 1.75rem);
+  --fs-h2: clamp(2rem, 1.5rem + 2.2vw, 3rem);
+  --fs-h1: clamp(2.75rem, 1.9rem + 3.8vw, 4.75rem);
+
+  /* — Spacing scale — */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4.5rem;
+  --sp-9: 6.5rem;
+  --sp-10: 9rem;
+
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --shadow-soft: 0 20px 50px -25px rgba(26, 23, 18, 0.35);
+  --shadow-lift: 0 28px 60px -20px rgba(26, 23, 18, 0.4);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--ink-900);
+  margin: 0;
+  text-wrap: balance;
+  font-weight: 600;
+}
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+section { scroll-margin-top: 5.5rem; }

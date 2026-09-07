@@ -1,0 +1,311 @@
+/* ==========================================================================
+   components.css — herbruikbare UI-onderdelen. Bruikbaar op elke pagina:
+   eyebrow, buttons, quote-cards, formulier + infokaart, openingsuren, FAQ.
+   ========================================================================== */
+
+/* — Eyebrow — */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background: var(--accent);
+  display: inline-block;
+}
+
+/* — Buttons — */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.01em;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.25s ease;
+  will-change: transform;
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--ink-900);
+  box-shadow: 0 14px 30px -12px rgba(169, 114, 31, 0.55);
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 20px 38px -14px rgba(169, 114, 31, 0.6); }
+.btn-ghost {
+  background: transparent;
+  border-color: rgba(250, 248, 242, 0.4);
+  color: var(--linen-50);
+}
+.btn-ghost:hover { transform: translateY(-3px); background: rgba(250, 248, 242, 0.1); }
+.btn-outline {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--ink-800);
+}
+.btn-outline:hover { transform: translateY(-3px); border-color: var(--accent-ink); background: var(--linen-50); }
+
+
+/* — Nav CTA: calm pulse + shine sweep on primary buttons — */
+.nav-pulse-btn { position: relative; }
+.nav-pulse-btn::before {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(201, 138, 52, 0.5), transparent 72%);
+  opacity: 0.4;
+  transform: scale(0.9);
+  z-index: -1;
+  animation: btn-breathe 3.4s ease-in-out infinite;
+}
+@keyframes btn-breathe {
+  0%, 100% { opacity: 0.32; transform: scale(0.88); }
+  50% { opacity: 0.75; transform: scale(1.14); }
+}
+.btn-primary { position: relative; overflow: hidden; }
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 40%; height: 100%;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transform: translateX(-260%) skewX(-12deg);
+  opacity: 0;
+  transition: transform 0.75s var(--ease), opacity 0.3s ease;
+}
+.btn-primary:hover::after, .btn-primary:focus-visible::after {
+  transform: translateX(340%) skewX(-12deg);
+  opacity: 1;
+}
+
+
+
+/* — Testimonials — */
+.quote-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-6);
+}
+@media (max-width: 760px) {
+  .quote-row { grid-template-columns: 1fr; }
+}
+.quote-card {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.quote-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-soft); }
+.stars { display: flex; gap: 0.2rem; color: var(--accent); }
+.quote-card p.quote-text {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--ink-900);
+  font-weight: 500;
+}
+.quote-attr {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+}
+.quote-attr .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--sage-400); }
+
+
+/* — Contact — */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--sp-8);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+.form-card {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 1.1rem + 1.6vw, var(--sp-7));
+  box-shadow: var(--shadow-soft);
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
+@media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
+.field { display: flex; flex-direction: column; gap: 0.4rem; margin-top: var(--sp-4); }
+.field label {
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-600);
+}
+.field input, .field textarea {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--ink-900);
+  background: var(--linen-100);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 0.95rem;
+  resize: vertical;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.field input:focus, .field textarea:focus {
+  outline: 3px solid rgba(169, 114, 31, 0.35);
+  outline-offset: 1px;
+  border-color: var(--accent-ink);
+  background: var(--surface-raised);
+}
+.form-card .btn-primary { margin-top: var(--sp-6); width: 100%; }
+.form-hint { margin-top: var(--sp-3); font-size: 0.8125rem; color: var(--text-muted); }
+
+.info-card {
+  background: var(--moss-900);
+  color: var(--linen-50);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 1.1rem + 1.6vw, var(--sp-7));
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+.info-row { display: flex; gap: var(--sp-4); align-items: flex-start; }
+.info-row svg { flex-shrink: 0; margin-top: 0.15rem; color: var(--gold-400); }
+.info-row h4 {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(250, 248, 242, 0.6);
+  margin: 0 0 0.3rem;
+}
+.info-row a { text-decoration: none; }
+.info-row a:hover { color: var(--gold-400); }
+.hours-table { width: 100%; border-collapse: collapse; font-size: var(--fs-small); }
+.hours-table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--gold-400);
+  padding-bottom: 0.4rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.hours-table td {
+  padding: 0.3rem 0;
+  color: rgba(250, 248, 242, 0.82);
+  border-top: 1px solid rgba(250, 248, 242, 0.12);
+}
+.hours-table td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+
+
+/* — FAQ — */
+.faq-list { display: flex; flex-direction: column; gap: var(--sp-3); max-width: 760px; }
+.faq-item {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--sp-5);
+}
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--ink-900);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary .faq-chevron { flex-shrink: 0; transition: transform 0.35s var(--ease); color: var(--accent-ink); }
+.faq-item[open] summary .faq-chevron { transform: rotate(135deg); }
+.faq-item p { margin-top: var(--sp-3); color: var(--text-muted); font-size: var(--fs-small); line-height: 1.6; }
+
+
+/* — Formulier: verplicht-markering, validatie en statusmelding — */
+.field-req { color: var(--wine-600); margin-left: 0.15em; }
+
+.field-error {
+  display: none;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--wine-700);
+}
+.field.has-error .field-error { display: block; }
+.field.has-error input,
+.field.has-error textarea {
+  border-color: var(--wine-600);
+  background: rgba(122, 46, 46, 0.05);
+}
+.field.has-error input:focus,
+.field.has-error textarea:focus {
+  outline-color: rgba(122, 46, 46, 0.35);
+  border-color: var(--wine-700);
+}
+
+.form-status {
+  display: none;
+  margin-top: var(--sp-5);
+  padding: var(--sp-4) var(--sp-5);
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  font-size: var(--fs-small);
+  line-height: 1.55;
+}
+.form-status.is-visible { display: block; }
+.form-status.is-success {
+  background: rgba(51, 66, 46, 0.08);
+  border-color: var(--moss-700);
+  color: var(--moss-900);
+}
+.form-status.is-error {
+  background: rgba(122, 46, 46, 0.07);
+  border-color: var(--wine-600);
+  color: var(--wine-700);
+}
+.form-status a { font-weight: 600; }
+
+/* Honeypot: onzichtbaar voor mensen, wel invulbaar voor bots. */
+.field-trap {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.btn[aria-busy="true"] { opacity: 0.65; pointer-events: none; }
+
+
+/* — Motion policy: componenten — */
+@media (prefers-reduced-motion: reduce) {
+  .nav-pulse-btn::before { animation: none !important; }
+  .btn, .quote-card, .faq-item summary .faq-chevron { transition: none; }
+}

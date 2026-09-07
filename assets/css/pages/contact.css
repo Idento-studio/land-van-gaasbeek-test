@@ -1,0 +1,54 @@
+/* ==========================================================================
+   pages/contact.css — uitsluitend voor contact.html.
+   Het formulier, de infokaart en de openingsuren zelf staan in
+   components.css; die zijn herbruikbaar. Hier alleen wat écht
+   paginagebonden is.
+   ========================================================================== */
+
+/* De page-header geeft bovenaan al lucht, dus de eerste sectie
+   mag krapper beginnen dan de standaard --sp-9. */
+.contact-page .section-first { padding-top: var(--sp-8); }
+
+/* — Routeknop onderaan de infokaart — */
+.route-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  align-self: flex-start;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(250, 248, 242, 0.25);
+  border-radius: 999px;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--linen-100);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s var(--ease);
+}
+.route-link:hover {
+  border-color: var(--gold-400);
+  background: rgba(219, 164, 86, 0.12);
+  transform: translateY(-2px);
+}
+.route-link svg { flex-shrink: 0; color: var(--gold-400); }
+
+/* — Antwoordtijd-notitie boven het formulier — */
+.reply-note {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-5);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--linen-100);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.reply-note svg { flex-shrink: 0; color: var(--accent-ink); }
+.reply-note strong { color: var(--ink-900); font-weight: 600; }
+
+/* — Motion policy: contact-specifiek — */
+@media (prefers-reduced-motion: reduce) {
+  .route-link { transition: none; }
+}
