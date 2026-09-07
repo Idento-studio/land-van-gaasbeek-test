@@ -1,0 +1,47 @@
+# Publiceert de site naar GitHub Pages.
+#
+# Waarom een eigen workflow in plaats van de standaard "Deploy from a branch"?
+# Die ingebouwde variant faalde met: Ensure GITHUB_TOKEN has permission
+# "id-token: write". Die OIDC-scope moet expliciet opgevraagd worden, en dat
+# kan alleen in een eigen workflow — zie het permissions-blok hieronder.
+#
+# Deze site is platte HTML/CSS/JS, dus er komt geen Jekyll aan te pas:
+# de map wordt gewoon als statische bestanden geüpload.
+name: Deploy site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Eén publicatie tegelijk; een lopende deploy niet afbreken.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
