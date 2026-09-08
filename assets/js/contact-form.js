@@ -1,7 +1,7 @@
 /* ==========================================================================
    contact-form.js — validatie en verzending van élk formulier met het
    [data-ajax-form] attribuut op deze site (het reserveringsformulier op de
-   homepage én het contactformulier op contact.html delen deze logica).
+   homepage én het contactformulier op /contact/ delen deze logica).
 
    ┌─ HIER STEL JE IN WAAR FORMULIEREN NAARTOE GAAN ───────────────────────┐
    │ ENDPOINT leeg laten  → de mailclient van de bezoeker opent met een    │

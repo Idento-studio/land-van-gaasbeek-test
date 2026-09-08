@@ -9,6 +9,12 @@
 (function () {
   'use strict';
 
+  // Het privacybeleid staat op /privacy/, maar dit script draait op
+  // pagina's van verschillende diepte. Elke pagina geeft daarom zelf
+  // het juiste relatieve pad mee via data-privacy-url op de <script>.
+  var thisScript = document.currentScript;
+  var PRIVACY_URL = (thisScript && thisScript.getAttribute('data-privacy-url')) || 'privacy/';
+
   var KEY = 'lvg-cookie-consent';
   var banner = null;
 
@@ -38,7 +44,7 @@
     banner.setAttribute('aria-label', 'Cookievoorkeuren');
     banner.innerHTML =
       '<p>We gebruiken enkel anonieme, analytische cookies om te begrijpen hoe bezoekers deze site gebruiken. Lees ons ' +
-      '<a href="privacy.html">privacybeleid</a>.</p>' +
+      '<a href="' + PRIVACY_URL + '">privacybeleid</a>.</p>' +
       '<div class="cookie-actions">' +
       '<button type="button" class="btn btn-outline" data-cookie-choice="rejected">Weigeren</button>' +
       '<button type="button" class="btn btn-primary" data-cookie-choice="accepted">Accepteren</button>' +
