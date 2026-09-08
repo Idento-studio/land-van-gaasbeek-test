@@ -1,3 +1,9 @@
+<!--
+  Bij koppeling van het echte domein (landvangaasbeek.be):
+  vervang overal https://idento-studio.github.io/land-van-gaasbeek-test/ door
+  https://landvangaasbeek.be/ — in de <link>/<meta> hieronder, in de JSON-LD,
+  en in /sitemap.xml en /robots.txt.
+-->
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -5,22 +11,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Land van Gaasbeek — Brasserie aan het kasteel</title>
   <meta name="description" content="Brasserie Land van Gaasbeek: Belgisch witblauw rund, paardenvlees en verse seizoensgerechten, op wandelafstand van het kasteel van Gaasbeek.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://idento-studio.github.io/land-van-gaasbeek-test/">
+  <meta name="theme-color" content="#33422e">
 
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn...) -->
+  <meta property="og:type" content="restaurant">
+  <meta property="og:site_name" content="Land van Gaasbeek">
+  <meta property="og:locale" content="nl_BE">
+  <meta property="og:title" content="Land van Gaasbeek — Brasserie aan het kasteel">
+  <meta property="og:description" content="Belgisch witblauw rund, paardenvlees en verse seizoensgerechten, op wandelafstand van het kasteel van Gaasbeek.">
+  <meta property="og:url" content="https://idento-studio.github.io/land-van-gaasbeek-test/">
+  <meta property="og:image" content="https://idento-studio.github.io/land-van-gaasbeek-test/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="De veranda van Land van Gaasbeek, gedekte tafels met zicht op het terras en de tuin">
+
+  <!-- Twitter/X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Land van Gaasbeek — Brasserie aan het kasteel">
+  <meta name="twitter:description" content="Belgisch witblauw rund, paardenvlees en verse seizoensgerechten, op wandelafstand van het kasteel van Gaasbeek.">
+  <meta name="twitter:image" content="https://idento-studio.github.io/land-van-gaasbeek-test/assets/img/og-image.jpg">
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Fonts: preconnect + non-blocking load (print-media trick), met noscript-fallback -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
   <!-- Volgorde is belangrijk: brand → layout → components → pagina -->
   <link rel="stylesheet" href="assets/css/brand.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/pages/home.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "@id": "https://idento-studio.github.io/land-van-gaasbeek-test/#restaurant",
+    "name": "Brasserie Land van Gaasbeek",
+    "image": ["https://idento-studio.github.io/land-van-gaasbeek-test/assets/img/og-image.jpg"],
+    "url": "https://idento-studio.github.io/land-van-gaasbeek-test/",
+    "telephone": "+32476273406",
+    "email": "info@landvangaasbeek.be",
+    "priceRange": "€€",
+    "servesCuisine": ["Belgisch", "Europees"],
+    "acceptsReservations": true,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Donkerstraat 41",
+      "postalCode": "1750",
+      "addressLocality": "Gaasbeek",
+      "addressCountry": "BE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 50.7986738,
+      "longitude": 4.1875439
+    },
+    "sameAs": [
+      "https://www.landvangaasbeek.be/",
+      "https://www.facebook.com/landvangaasbeek/"
+    ],
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "12:00", "closes": "14:00", "validFrom": "2026-04-06", "validThrough": "2026-09-30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "18:00", "closes": "20:00", "validFrom": "2026-04-06", "validThrough": "2026-09-30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"], "opens": "12:00", "closes": "14:00", "validFrom": "2026-11-01", "validThrough": "2027-03-31" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"], "opens": "18:00", "closes": "20:00", "validFrom": "2026-11-01", "validThrough": "2027-03-31" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "17:30", "closes": "20:45", "validFrom": "2026-11-01", "validThrough": "2027-03-31" }
+    ]
+  }
+  </script>
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Ga naar inhoud</a>
+
 <div class="progress-bar" aria-hidden="true"><div class="progress-bar-fill" id="progressFill"></div></div>
 
-<nav class="nav">
+<nav class="nav" aria-label="Hoofdnavigatie">
   <div class="wrap nav-inner">
     <a href="#hero" class="brand-mark">
       <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
@@ -75,14 +152,20 @@
 
     <div class="hero-visual reveal" id="heroVisual">
       <div class="hero-photo" id="heroPhoto">
-        <img
-          src="assets/img/hero-veranda.jpg"
-          width="1100"
-          height="693"
-          alt="De veranda van Land van Gaasbeek, gedekte tafels met zicht op het terras en de tuin"
-          loading="eager"
-          onerror="this.style.display='none'"
-        >
+        <picture>
+          <source srcset="assets/img/hero-veranda.avif" type="image/avif">
+          <source srcset="assets/img/hero-veranda.webp" type="image/webp">
+          <img
+            src="assets/img/hero-veranda.jpg"
+            width="1100"
+            height="693"
+            alt="De veranda van Land van Gaasbeek, gedekte tafels met zicht op het terras en de tuin"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            onerror="this.style.display='none'"
+          >
+        </picture>
       </div>
       <div class="hero-booking-card">
         <div class="hero-booking-top">
@@ -96,7 +179,7 @@
   </div>
 </header>
 
-<main>
+<main id="main-content">
   <section class="section" id="gerechten">
     <div class="wrap">
       <div class="section-head reveal">
@@ -186,15 +269,15 @@
       </div>
       <div class="stats-row reveal">
         <div class="stat-item">
-          <span class="stat-num" data-count-to="70" data-suffix="+">0</span>
+          <span class="stat-num" data-count-to="70" data-suffix="+">70+</span>
           <span class="stat-label">tevreden gasten op Tripadvisor</span>
         </div>
         <div class="stat-item">
-          <span class="stat-num" data-count-to="3">0</span>
+          <span class="stat-num" data-count-to="3">3</span>
           <span class="stat-label">sfeervolle plekken om te tafelen</span>
         </div>
         <div class="stat-item">
-          <span class="stat-num" data-count-to="1" data-suffix=" km">0</span>
+          <span class="stat-num" data-count-to="1" data-suffix=" km">1 km</span>
           <span class="stat-label">wandelen vanaf het kasteel</span>
         </div>
       </div>
@@ -329,33 +412,54 @@
         <p>Bel ons gerust — dat is voor ons de snelste manier om je tafel meteen vast te leggen. Liever mailen of het formulier invullen? Ook goed, we antwoorden zo snel mogelijk.</p>
       </div>
       <div class="contact-grid">
-        <form class="form-card reveal" onsubmit="return false;">
+        <form class="form-card reveal" id="reserveForm" data-ajax-form>
           <div class="form-row">
             <div class="field">
               <label for="naam">Naam</label>
-              <input type="text" id="naam" name="naam" placeholder="Voor- en achternaam" required>
+              <input type="text" id="naam" name="naam" aria-describedby="naam-error" placeholder="Voor- en achternaam" autocomplete="name" required>
+              <span class="field-error" id="naam-error"></span>
             </div>
             <div class="field">
               <label for="telefoon">Telefoon</label>
-              <input type="tel" id="telefoon" name="telefoon" placeholder="04XX XX XX XX" required>
+              <input type="tel" id="telefoon" name="telefoon" aria-describedby="telefoon-error" placeholder="04XX XX XX XX" autocomplete="tel" inputmode="tel" required>
+              <span class="field-error" id="telefoon-error"></span>
             </div>
           </div>
           <div class="form-row">
             <div class="field">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" aria-describedby="email-error" placeholder="jouw@email.be" autocomplete="email" inputmode="email" required>
+              <span class="field-error" id="email-error"></span>
+            </div>
+            <div class="field">
               <label for="datum">Gewenste datum</label>
               <input type="date" id="datum" name="datum" required>
             </div>
-            <div class="field">
-              <label for="personen">Aantal personen</label>
-              <input type="number" id="personen" name="personen" min="1" placeholder="2" required>
-            </div>
+          </div>
+          <div class="field">
+            <label for="personen">Aantal personen</label>
+            <input type="number" id="personen" name="personen" min="1" placeholder="2" required>
           </div>
           <div class="field">
             <label for="bericht">Bericht (optioneel)</label>
             <textarea id="bericht" name="bericht" rows="3" placeholder="Allergieën, tafelvoorkeur, speciale gelegenheid..."></textarea>
           </div>
+
+          <!-- Honeypot tegen spambots. Laat leeg — mensen zien dit veld niet. -->
+          <div class="field-trap" aria-hidden="true">
+            <label for="website-hero">Website</label>
+            <input type="text" id="website-hero" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
           <button type="submit" class="btn btn-primary">Reserveer nu</button>
           <p class="form-hint">We bevestigen je reservatie telefonisch of per e-mail binnen de dag.</p>
+          <div class="form-status" id="reserveFormStatus" aria-live="polite"></div>
+          <noscript>
+            <p class="form-status is-visible is-error">
+              JavaScript staat uit — bel ons liever op <a href="tel:+32476273406">+32 476 27 34 06</a>
+              of mail naar <a href="mailto:info@landvangaasbeek.be">info@landvangaasbeek.be</a>.
+            </p>
+          </noscript>
         </form>
 
         <div class="info-card reveal">
@@ -405,6 +509,7 @@
   <div class="wrap footer-inner">
     <span><strong>Land van Gaasbeek</strong> — Donkerstraat 41, 1750 Gaasbeek</span>
     <span>Wendy &amp; Miguel · +32 476 27 34 06</span>
+    <span class="footer-legal"><a href="privacy.html">Privacybeleid</a> · <a href="#" data-cookie-settings>Cookie-instellingen</a></span>
   </div>
 </footer>
 
@@ -428,6 +533,9 @@
   <a href="#reserveren" class="btn btn-primary">Reserveer nu</a>
 </div>
 
+<script src="assets/js/cookie-consent.js" defer></script>
+<script src="assets/js/analytics.js" defer></script>
 <script src="assets/js/site.js" defer></script>
+<script src="assets/js/contact-form.js" defer></script>
 </body>
 </html>

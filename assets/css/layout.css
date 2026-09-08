@@ -3,6 +3,26 @@
    container, nav, footer, sectie-ritme, scroll-progressbar, reveal-animatie.
    ========================================================================== */
 
+/* — Skip link (toetsenbord/screenreader): onzichtbaar tot het focus krijgt — */
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: var(--sp-4);
+  z-index: 100;
+  background: var(--moss-950);
+  color: var(--linen-50);
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s var(--ease);
+}
+.skip-link:focus {
+  top: var(--sp-4);
+}
+
+
 /* — Container — */
 .wrap {
   width: 100%;
@@ -148,10 +168,18 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: var(--sp-3);
+  gap: var(--sp-3) var(--sp-6);
   font-size: 0.875rem;
 }
 .footer-inner strong { color: var(--linen-50); font-family: var(--font-display); font-weight: 600; }
+.footer-legal { opacity: 0.85; }
+.footer-legal a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(250, 248, 242, 0.35);
+  text-underline-offset: 2px;
+}
+.footer-legal a:hover { text-decoration-color: var(--gold-400); }
 
 
 /* — Progress bar — */

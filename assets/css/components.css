@@ -304,8 +304,48 @@
 .btn[aria-busy="true"] { opacity: 0.65; pointer-events: none; }
 
 
+/* — Cookiebanner — */
+.cookie-banner {
+  position: fixed;
+  left: var(--sp-5);
+  right: var(--sp-5);
+  bottom: var(--sp-5);
+  z-index: 90;
+  max-width: 480px;
+  margin-inline: auto;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--sp-5);
+  box-shadow: var(--shadow-lift);
+  transform: translateY(140%);
+  transition: transform 0.5s var(--ease);
+}
+.cookie-banner.is-visible { transform: translateY(0); }
+.cookie-banner p {
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+.cookie-banner p a { color: var(--accent-ink); font-weight: 600; }
+.cookie-actions {
+  margin-top: var(--sp-4);
+  display: flex;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+.cookie-actions .btn {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.875rem;
+}
+@media (max-width: 560px) {
+  .cookie-banner { left: var(--sp-4); right: var(--sp-4); bottom: var(--sp-4); }
+}
+
+
 /* — Motion policy: componenten — */
 @media (prefers-reduced-motion: reduce) {
   .nav-pulse-btn::before { animation: none !important; }
   .btn, .quote-card, .faq-item summary .faq-chevron { transition: none; }
+  .cookie-banner { transition: none; }
 }

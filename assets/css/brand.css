@@ -35,7 +35,11 @@
   --text-muted: var(--ink-600);
   --border: var(--linen-300);
   --accent: var(--gold-500);
-  --accent-ink: var(--gold-600);
+  /* Iets dieper dan --gold-600: op de lichte achtergronden (linen/wit) waar
+     dit voor kleine tekst en links gebruikt wordt, haalt --gold-600 zelf maar
+     3.6:1 contrast — net onder de WCAG AA-norm (4.5:1) voor gewone tekst.
+     Deze tint haalt overal ≥4.5:1, zonder merkbaar minder "goud" te ogen. */
+  --accent-ink: #8f611a;
   --brand: var(--moss-800);
 
   /* — Type scale — */

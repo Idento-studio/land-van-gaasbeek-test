@@ -1,3 +1,9 @@
+<!--
+  Bij koppeling van het echte domein (landvangaasbeek.be):
+  vervang overal https://idento-studio.github.io/land-van-gaasbeek-test/ door
+  https://landvangaasbeek.be/ — in de <link>/<meta> hieronder, in de JSON-LD,
+  en in /sitemap.xml en /robots.txt.
+-->
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -5,22 +11,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact — Land van Gaasbeek</title>
   <meta name="description" content="Contacteer brasserie Land van Gaasbeek in Gaasbeek: telefoon, e-mail, adres, openingsuren en een contactformulier.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://idento-studio.github.io/land-van-gaasbeek-test/contact.html">
+  <meta name="theme-color" content="#33422e">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Land van Gaasbeek">
+  <meta property="og:locale" content="nl_BE">
+  <meta property="og:title" content="Contact — Land van Gaasbeek">
+  <meta property="og:description" content="Telefoon, e-mail, adres, openingsuren en een contactformulier voor brasserie Land van Gaasbeek.">
+  <meta property="og:url" content="https://idento-studio.github.io/land-van-gaasbeek-test/contact.html">
+  <meta property="og:image" content="https://idento-studio.github.io/land-van-gaasbeek-test/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter/X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact — Land van Gaasbeek">
+  <meta name="twitter:description" content="Telefoon, e-mail, adres, openingsuren en een contactformulier voor brasserie Land van Gaasbeek.">
+  <meta name="twitter:image" content="https://idento-studio.github.io/land-van-gaasbeek-test/assets/img/og-image.jpg">
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
   <!-- Volgorde is belangrijk: brand → layout → components → pagina -->
   <link rel="stylesheet" href="assets/css/brand.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/pages/contact.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "@id": "https://idento-studio.github.io/land-van-gaasbeek-test/#restaurant",
+    "name": "Brasserie Land van Gaasbeek",
+    "image": ["https://idento-studio.github.io/land-van-gaasbeek-test/assets/img/og-image.jpg"],
+    "url": "https://idento-studio.github.io/land-van-gaasbeek-test/",
+    "telephone": "+32476273406",
+    "email": "info@landvangaasbeek.be",
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Donkerstraat 41",
+      "postalCode": "1750",
+      "addressLocality": "Gaasbeek",
+      "addressCountry": "BE"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 50.7986738, "longitude": 4.1875439 }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://idento-studio.github.io/land-van-gaasbeek-test/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://idento-studio.github.io/land-van-gaasbeek-test/contact.html" }
+    ]
+  }
+  </script>
 </head>
 <body class="contact-page">
 
+<a class="skip-link" href="#main-content">Ga naar inhoud</a>
+
 <div class="progress-bar" aria-hidden="true"><div class="progress-bar-fill" id="progressFill"></div></div>
 
-<nav class="nav">
+<nav class="nav" aria-label="Hoofdnavigatie">
   <div class="wrap nav-inner">
     <a href="index.html" class="brand-mark">
       <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
@@ -54,7 +122,7 @@
   </div>
 </header>
 
-<main>
+<main id="main-content">
   <section class="section section-first" id="bericht">
     <div class="wrap">
       <div class="contact-grid">
@@ -65,7 +133,7 @@
             <span><strong>We antwoorden meestal binnen de dag.</strong> <br>Heb je een tafel nodig voor vandaag of morgen? Bel dan liever even.</span>
           </div>
 
-          <form class="form-card reveal" id="contactForm" method="post" action="mailto:info@landvangaasbeek.be" enctype="text/plain">
+          <form class="form-card reveal" id="contactForm" data-ajax-form method="post" action="mailto:info@landvangaasbeek.be" enctype="text/plain">
             <div class="form-row">
               <div class="field">
                 <label for="naam">Naam <span class="field-req" aria-hidden="true">*</span></label>
@@ -98,7 +166,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Verstuur bericht</button>
-            <p class="form-hint"><span class="field-req" aria-hidden="true">*</span> Verplicht. Je gegevens gebruiken we enkel om je vraag te beantwoorden.</p>
+            <p class="form-hint"><span class="field-req" aria-hidden="true">*</span> Verplicht. Je gegevens gebruiken we enkel om je vraag te beantwoorden — zie ons <a href="privacy.html">privacybeleid</a>.</p>
 
             <div class="form-status" id="formStatus" aria-live="polite"></div>
 
@@ -166,9 +234,12 @@
   <div class="wrap footer-inner">
     <span><strong>Land van Gaasbeek</strong> — Donkerstraat 41, 1750 Gaasbeek</span>
     <span>Wendy &amp; Miguel · +32 476 27 34 06</span>
+    <span class="footer-legal"><a href="privacy.html">Privacybeleid</a> · <a href="#" data-cookie-settings>Cookie-instellingen</a></span>
   </div>
 </footer>
 
+<script src="assets/js/cookie-consent.js" defer></script>
+<script src="assets/js/analytics.js" defer></script>
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/contact-form.js" defer></script>
 </body>

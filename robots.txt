@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://idento-studio.github.io/land-van-gaasbeek-test/sitemap.xml
